@@ -1,0 +1,39 @@
+<!--
+ Copyright (c) 2014, 2018, Oracle and/or its affiliates.
+ The Universal Permissive License (UPL), Version 1.0
+ -->
+<div class="oj-hybrid-padding">
+  <h1>Dashboard Content Area</h1>
+  <div>
+      To change the content of this section, you will make edits to the dashboard.html file located in the /js/views folder.
+  </div>
+</div>
+ <div class="uploadFile">
+ <oj-file-picker class='oj-filepicker-custom'
+                          select-on='click'
+                          selection-mode='single'
+                          on-oj-select='[[$data.selectListener]]'>
+            <oj-button slot='trigger'>
+               <span slot='startIcon' class='oj-fwk-icon oj-fwk-icon-arrowbox-n'></span>
+               Upload
+            </oj-button>
+          </oj-file-picker>
+</div> 
+ 
+<div class="filesTable">
+        <oj-table id='tableView'
+                  aria-label='Files Table'
+                  data='[[$data.datasource]]'
+                  columns-default='{"sortable": "disabled"}'
+                  columns='[{"headerText": "Path", "field":"path"}]'
+                  row-renderer='[[oj.KnockoutTemplateUtils.getRenderer("row_tmpl", true)]]'>
+        </oj-table>
+        
+        <script type="text/html" id="row_tmpl">
+            <tr>
+                <td>
+                    <a href="#" data-bind="text: path, click: $parent.onClick.bind($parent)"/>
+                    </td>
+            </tr>
+        </script>
+</div>

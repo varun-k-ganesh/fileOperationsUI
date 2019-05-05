@@ -1,0 +1,14 @@
+/*
+    Document   : override
+    Created on : <date>
+    Author     : <author>
+    Description:
+        This is where any of your application specific styles should be included
+*/
+
+#tableView {
+    height: 30rem;
+    max-height: 30rem;
+    width:50rem;
+}
+
